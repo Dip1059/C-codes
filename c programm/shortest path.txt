@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+     int i,j,k;
+   int  grp[4][4]={0,0,0,1,1,0,0,0,1,0,0,1,1,0,1,0};
+   int outpt[4][4]={0};
+   printf("input");
+
+     for (i=0; i<4; i++){ printf("\n");
+        for (j=0; j<4; j++){
+  printf("\t%d",grp[i][j] );
+        }
+     }
+
+//////////////////////////////////////
+     for (k=0; k<4; k++){
+        for (i=0; i<4; i++){
+            for (j=0; j<4; j++){
+            outpt[i][j]= grp[i][j] || (grp[i][k] && grp[k][j]);
+
+
+            }
+        }
+     }
+ ///////////////////////////////////////////
+
+printf("\n\n output");
+     for (i=0; i<4; i++){ printf("\n");
+        for (j=0; j<4; j++){
+  printf("\t%d",outpt[i][j] );
+        }
+     }
+    return 0;
+}

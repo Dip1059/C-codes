@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int heap_size=8;
+
+void max_heap(int a[],int i)
+{
+    int l,r,largest;
+    l=2*i;
+    r=2*i+1;
+
+    if(l<=heap_size && a[l]>a[i])largest=l;
+    else largest=i;
+
+    if(r<=heap_size && a[r]>a[largest])largest=r;
+
+    if (largest!=i)
+    {
+        swap(a[i],a[largest]);
+        max_heap(a,largest);
+
+    }
+}
+
+int heap_sort(int b[])
+{
+    for(int j=4; j>=1; j--)max_heap(b,j); // (8/2)=4
+    for(int i=8;i>=2;i--)
+    {
+        swap(b[1],b[i]);
+        heap_size--;
+        max_heap(b,1);
+    }
+
+}
+
+
+int main()
+{
+    int b[9]={0,3,36,89,23,13,56,7,68};
+    heap_sort(b);
+    for(int j=1; j<=8; j++)printf("%d ",b[j]);
+
+    return 0;
+}

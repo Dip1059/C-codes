@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1392559281 source:d:\data structure\uva\713(adding reverse num)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

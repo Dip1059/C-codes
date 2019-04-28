@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1392141286 source:d:\data structure\javac\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

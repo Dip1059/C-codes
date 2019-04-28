@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1380393411 source:d:\data structure\linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1380393789 source:d:\data structure\linked list\circular linked list.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

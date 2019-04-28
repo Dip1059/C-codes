@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1366684805 source:d:\c programm\temperature\main.c
+	<stdio.h>
+	<stdlib.h>
+

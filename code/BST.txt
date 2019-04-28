@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+using namespace std;
+
+#define n 5
+#define infi 100
+double p[]={0.00,0.15,0.10,0.05,0.10,0.20};
+double q[]={0.05,0.10,0.05,0.05,0.05,0.10};
+double e[n+2][n+1];
+double w[n+2][n+1];
+int root[n+1][n+1];
+
+void optimal_BST()
+{
+    for(int i=1;i<=n+1;i++)w[i][i-1]=e[i][i-1]=q[i-1];
+    for(int l=1;l<=n;l++)
+        for(int i=1;i<=n-l+1;i++)
+        {
+            int j=i+l-1;
+            e[i][j]=infi;
+            w[i][j]=w[i][j-1]+p[j]+q[j];
+
+            for(int r=i;r<=j;r++)
+            {
+                double t=e[i][r-1]+e[r+1][j]+w[i][j];
+                if(t<e[i][j])
+                {
+                    e[i][j]=t;
+                    root[i][j]=r;
+                }
+            }
+        }
+
+
+}
+
+int main()
+{
+    optimal_BST();
+    root[1][5]=root[6][4];
+
+
+    printf("e is :\n");
+    for(int i=1;i<=n+1;i++)
+    {
+        for(int j=0;j<=n;j++)
+            if(e[i][j])printf("%.2lf ",e[i][j]);
+         printf("\n");
+    }
+
+    printf("w is :\n");
+    for(int i=1;i<=n+1;i++)
+    {
+        for(int j=0;j<=n;j++)
+            if(w[i][j])printf("%.2lf ",w[i][j]);
+         printf("\n");
+    }
+
+    printf("\nroot is :\n");
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+            if(root[i][j])printf("%d ",root[i][j]);
+         printf("\n");
+    }
+
+    return 0;
+}
+
+

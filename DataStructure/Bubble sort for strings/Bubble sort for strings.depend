@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1378310708 source:d:\data structure\bubble sort for strings\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

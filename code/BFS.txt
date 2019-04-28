@@ -1,0 +1,100 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <vector>
+#include <cstring>
+using namespace std;
+
+vector<int>G[100];
+int parent[100]= {0};
+
+void print_path(int s,int v)
+{
+    if (v==s)printf("%d ",s);
+    else
+    {
+        print_path(s,parent[v]);
+        printf("%d ",v);
+    }
+
+}
+
+void bfs(int n,int src)
+{
+    queue<int>Q;
+    Q.push(src);
+    int visited[100]= {0},level[100];
+    visited[src]=1;
+    level[src]=0;
+    while(!Q.empty())
+    {
+        int u=Q.front();
+        for(int i=0; i<G[u].size(); i++)
+        {
+            int v=G[u][i];
+            if(visited[v]==0)
+            {
+
+                parent[v]=u;
+                level[v]=level[u]+1;
+                visited[v]=1;
+                Q.push(v);
+            }
+        }
+        Q.pop();
+    }
+
+    printf("BFS : ");
+    print_path(1,8);
+    printf("\n");
+    for(int i=1;i<=n;i++)
+    	printf("%d to %d distance %d\n",src,i,level[i]);
+}
+
+
+
+
+int main()
+{
+    freopen("in.txt","r",stdin);
+
+    int n;
+    scanf("%d",&n);
+    int u,v;
+    while(scanf("%d %d",&u,&v)==2)
+    {
+        G[u].push_back(v);
+        G[v].push_back(u);
+    }
+
+    bfs(9,1);
+
+    return 0;
+}
+
+
+
+
+
+
+
+/*
+9
+1 6
+1 2
+1 4
+2 3
+2 6
+3 6
+6 7
+3 8
+3 5
+4 5
+5 9
+*/
+
+
+

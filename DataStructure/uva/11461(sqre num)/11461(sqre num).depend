@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1393656945 source:d:\data structure\uva\11461(sqre num)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

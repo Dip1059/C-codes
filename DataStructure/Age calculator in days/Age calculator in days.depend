@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1378229375 source:d:\data structure\age calculator in days\main.c
+	<stdio.h>
+	<stdlib.h>
+

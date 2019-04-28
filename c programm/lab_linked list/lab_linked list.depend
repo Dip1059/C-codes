@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1366111550 source:/home/sadid/lab_linked list/main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+

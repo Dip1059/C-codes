@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <algorithm>
+#include <queue>
+#include <stack>
+#include <vector>
+#include <cstring>
+using namespace std;
+
+#define Max 100
+#define white 0
+#define gray 1
+#define black 2
+#define nill 0
+
+vector<int>G[Max];
+int parent[Max]= {nill};
+int color[Max]= {white};
+int dis_time[Max],fin_time[Max];
+int n;
+int time=0;
+
+
+void visit(int u)
+{
+ time++;
+ dis_time[u]=time;
+ color[u]=gray;
+ for(int i=0;i<G[u].size();i++)
+ {
+     int v=G[u][i];
+     if(color[v]==white)
+     {
+         parent[v]=u;
+         visit(v);
+     }
+ }
+ color[u]=black;
+ time++;
+ fin_time[u]=time;
+
+
+}
+
+void dfs()
+{
+    for(int i=1;i<=n;i++)
+    if(color[i]==white)visit(i);
+}
+
+int main()
+{
+    freopen("in.txt","r",stdin);
+
+    scanf("%d",&n);
+    int u,v;
+    while(scanf("%d %d",&u,&v)==2)
+    {
+        G[u].push_back(v);
+        G[v].push_back(u);
+    }
+    dfs();
+    for(int i=1;i<=n;i++)printf("%d = %d\t%d \n",i,dis_time[i],fin_time[i]);
+    return 0;
+}

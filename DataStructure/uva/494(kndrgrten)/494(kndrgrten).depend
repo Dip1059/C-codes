@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1393056311 source:d:\data structure\uva\494(kndrgrten)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

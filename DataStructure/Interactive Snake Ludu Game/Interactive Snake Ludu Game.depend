@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1378063369 source:d:\data structure\interactive snake ludu game\main.c
+	<stdio.h>
+	<string.h>
+

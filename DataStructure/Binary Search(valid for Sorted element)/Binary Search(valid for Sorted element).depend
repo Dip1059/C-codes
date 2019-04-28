@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1380479278 source:d:\data structure\binary search(valid for sorted element)\main.c
+	<stdio.h>
+	<stdlib.h>
+
